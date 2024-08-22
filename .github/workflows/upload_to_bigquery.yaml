@@ -30,4 +30,5 @@ jobs:
     - name: Run Python Script
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/credentials.json
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Only if needed for GitHub API access
       run: python REPO_GCP_INTEGRATION.py
