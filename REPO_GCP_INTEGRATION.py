@@ -12,8 +12,8 @@ print(os.getenv('GOOGLE_APPLICATION_CREDENTIALS_JSON'))
 
 # Google Cloud credentials
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\\Users\\VarunPillai\\Pictures\\Screenshots\\Python Scripts\\Git_To_GCB\\pilot-project-433005-0366e733b805.json'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('CREDENTIALS')
-print(os.getenv('CREDENTIALS'))
+os.environ['GCP_GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GCP_CREDENTIALS')
+print(os.getenv('GCP_CREDENTIALS'))
 client = bigquery.Client()
 
 # Dataset ID (BigQuery dataset where tables will be created)
