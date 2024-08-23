@@ -7,11 +7,13 @@ from google.cloud import bigquery
 repo_owner = "PILLAI9"
 repo_name = "Taizen"
 download_dir = r"/github/workspace/Downloads_GIT"
-github_token = os.getenv('GITHUB_TOKEN')  # Replace with your GitHub token
+github_token = os.getenv('GIT_TOKEN')  # Replace with your GitHub token
+print(os.getenv('GIT_TOKEN'))
 
 # Google Cloud credentials
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\\Users\\VarunPillai\\Pictures\\Screenshots\\Python Scripts\\Git_To_GCB\\pilot-project-433005-0366e733b805.json'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('CREDENTAILS')
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('CREDENTIALS')
+print(os.getenv('CREDENTIALS'))
 client = bigquery.Client()
 
 # Dataset ID (BigQuery dataset where tables will be created)
