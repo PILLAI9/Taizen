@@ -11,25 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Set up Google Cloud Credentials
-      run: |
-        echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}' > credentials.json
+      - name: Set up Google Cloud Credentials
+        run: |
+          echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}' > credentials.json
 
-    - name: Run Python Script
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/credentials.json
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Only if needed for GitHub API access
-      run: python REPO_GCP_INTEGRATION.py
+      - name: Run Python Script
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/credentials.json
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Only if needed for GitHub API access
+        run: python REPO_GCP_INTEGRATION.py
+
+      - name: File Debug
+        run: | 
+          echo "First 10 characters of JSON:"
+          head -c 20 credentials.json
+          echo "Last 10 characters of JSON:"
+          tail -c 20 credentials.json
+          echo "\nFile Size:"
+          wc -c credentials.json
