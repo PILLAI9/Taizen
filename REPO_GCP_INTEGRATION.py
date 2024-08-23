@@ -68,4 +68,4 @@ def upload_file_to_bigquery(file_path, table_id):
 if __name__ == '__main__':
     # Start downloading CSV files and uploading them to BigQuery
     download_csv_files_from_repo(repo)
-    print("All files have been processed.")
+    print("All files have been processed.Lets GOOOOOOOO")
