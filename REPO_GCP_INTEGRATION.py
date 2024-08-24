@@ -12,7 +12,8 @@ print(os.getenv('HUB_TOKEN'))
 
 # Google Cloud credentials
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\\Users\\VarunPillai\\Pictures\\Screenshots\\Python Scripts\\Git_To_GCB\\pilot-project-433005-0366e733b805.json'
-os.environ['GCP_GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GCP_GOOGLE_APPLICATION_CREDENTIALS')
+# os.environ['GCP_GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GCP_GOOGLE_APPLICATION_CREDENTIALS')
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')  # Updated to match the workflow environment variable
 print(os.getenv('GCP_GOOGLE_APPLICATION_CREDENTIALS'))
 client = bigquery.Client()
 
