@@ -6,7 +6,8 @@ from google.cloud import bigquery
 # GitHub repository details
 repo_owner = "PILLAI9"
 repo_name = "Taizen"
-download_dir = r"/github/workspace/Downloads_GIT"
+# download_dir = r"/github/workspace/Downloads_GIT"
+download_dir = os.path.join(os.getenv('GITHUB_WORKSPACE', '/github/workspace'), "Downloads_GIT")
 github_token = os.getenv('HUB_TOKEN')  # Replace with your GitHub token
 print(os.getenv('HUB_TOKEN'))
 
