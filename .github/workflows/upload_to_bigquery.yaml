@@ -26,19 +26,12 @@ jobs:
 
       - name: Set up Google Cloud Credentials
         run: |
-          echo '${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}' > credentials.json
+          echo '${{ secrets.GCP_GOOGLE_APPLICATION_CREDENTIALS }}' > credentials.json
 
       - name: Run Python Script
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/credentials.json
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Only if needed for GitHub API access
+          GITHUB_TOKEN: ${{ secrets.HUB_TOKEN }}  # Only if needed for GitHub API access
         run: python REPO_GCP_INTEGRATION.py
 
-      - name: File Debug
-        run: | 
-          echo "First 10 characters of JSON:"
-          head -c 20 credentials.json
-          echo "Last 10 characters of JSON:"
-          tail -c 20 credentials.json
-          echo "\nFile Size:"
-          wc -c credentials.json
+
