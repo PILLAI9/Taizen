@@ -7,8 +7,8 @@ from google.cloud import bigquery
 repo_owner = "PILLAI9"
 repo_name = "Taizen"
 download_dir = r"/github/workspace/Downloads_GIT"
-github_token = os.getenv('GOOGLE_APPLICATION_CREDENTIALS_JSON')  # Replace with your GitHub token
-print(os.getenv('GOOGLE_APPLICATION_CREDENTIALS_JSON'))
+github_token = os.getenv('GCP_GOOGLE_APPLICATION_CREDENTIALS')  # Replace with your GitHub token
+print(os.getenv('GCP_GOOGLE_APPLICATION_CREDENTIALS'))
 
 # Google Cloud credentials
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'C:\\Users\\VarunPillai\\Pictures\\Screenshots\\Python Scripts\\Git_To_GCB\\pilot-project-433005-0366e733b805.json'
